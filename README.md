@@ -1,7 +1,7 @@
 # Project Overview
 Welcome to My Silly Superhero Tier List (MSSTL)! [View our website]()
 
-## Product Planning
+## Project Planning
 View how the project was planned through the [Google Planning Doc](https://docs.google.com/document/d/12If6srPsXWisIytbHHm1vEGf2Vxd5953LN6XYvCe9Ik/edit?usp=sharing).
 
 ## Project Requirements
@@ -18,8 +18,8 @@ Create a simple application that allows a user to create a superhero team using 
 - Feel free to add any other functionality that would be fun, useful or cool.
 
 ### Deliverables
-URL to working application
-Access to codebase
+- URL to working application
+- Access to codebase
 
 # Tech Stack
 This project makes use of:
