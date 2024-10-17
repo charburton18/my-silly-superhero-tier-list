@@ -23,7 +23,7 @@ function Home() {
 
   return (
     <>
-      {console.log(prompt)};
+      {console.log(prompt)}
 
       <h1>My Silly Superhero Tier List</h1>
       <h2>Welcome!</h2>
