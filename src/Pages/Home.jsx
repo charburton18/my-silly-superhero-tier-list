@@ -23,8 +23,6 @@ function Home() {
 
   return (
     <>
-      {console.log(prompt)}
-
       <h1>My Silly Superhero Tier List</h1>
       <h2>Welcome!</h2>
       <p>Welcome to MSSTL, where you can make super silly tier lists with your favorite superheroes!</p><br></br>
