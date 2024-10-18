@@ -1,7 +1,7 @@
 function Search() {
   return (
     <>
-      <Nav></Nav>>
+      <Nav></Nav>
       <h2>Welcome!</h2>
       <p>Welcome to MSSTL, where you can make super silly tier lists with your favorite superheroes!</p><br></br>
       <p>Make a tier list of:</p>
