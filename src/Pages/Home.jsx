@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { useState } from "react"
 
 function Home() {
@@ -29,7 +30,9 @@ function Home() {
       <p>Make a tier list of:</p>
       <h2 id='tier-list-prompt'>Which superheroes are the most overrated?</h2>
       <button onClick={handleClick}>Reroll</button>
-      <button>Make my Tier List!</button>
+      <Link to={`/search`}>
+        <button>Make my Tier List!</button>
+      </Link>
     </>
   )
 }
