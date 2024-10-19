@@ -1,9 +1,14 @@
 import Home from './Pages/Home'
+import Search from './Pages/Search'
+import {Routes, Route} from 'react-router-dom'
 
 function App() {
   return (
     <>
-      <Home></Home>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/search' element={<Search/>} />
+      </Routes>
     </>
   )
 }
