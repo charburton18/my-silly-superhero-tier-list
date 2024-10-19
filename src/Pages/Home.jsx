@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
 
-function Home() {
-
-  const [prompt, setPrompt] = useState("Which superheroes are the most overrated?");
+function Home({prompt, setPrompt}) {
 
   // this function replaces the tier list prompt from an array of prompts
   const handleClick = () => {
@@ -18,12 +16,13 @@ function Home() {
     const promptArr = [prompt1, prompt2, prompt3, prompt4, prompt5, prompt6]
     // define the h2 element we need to access
     const currentPrompt = document.getElementById('tier-list-prompt')
-    // replace the inner text of the h2 'tier-list-prompt' with a random prompt from the array. Set the state.
+    // replace the inner text of the h2 'tier-list-prompt' with a random prompt from the array. Set the the current prompt = "prompt" in our useState.
     setPrompt(currentPrompt.innerText = promptArr[Math.floor(Math.random() * 6)])
   }
 
   return (
     <>
+      {console.log(prompt)}
       <h1>My Silly Superhero Tier List</h1>
       <h2>Welcome!</h2>
       <p>Welcome to MSSTL, where you can make super silly tier lists with your favorite superheroes!</p><br></br>

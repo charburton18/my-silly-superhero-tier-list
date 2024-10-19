@@ -1,7 +1,7 @@
 import NavBar from '../components/NavBar'
 import { Link } from 'react-router-dom'
 
-function Search() {
+function Search({prompt, setPrompt}) {
 
   // need a function that grabs superhero names from the api and generates <li>'s, a button, and text field for each line
 
@@ -13,9 +13,9 @@ function Search() {
     <>
       <NavBar></NavBar>
       <h3>My Silly Superhero Tier List of:</h3>
-      <h2 id='tier-list-prompt'>Which superheroes are the most overrated?</h2> {/* Need to pass prompt prop here */}
+      <h2 id='tier-list-prompt'>{prompt}</h2> {/* Need to pass prompt prop here */}
 
-      <form class="search-form">
+      <form className="search-form">
         <input type="text" placeholder="Search" name="search" />
         <button type="submit">Search</button>
       </form>

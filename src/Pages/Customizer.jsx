@@ -1,13 +1,13 @@
 import NavBar from '../components/NavBar'
 import { Link } from 'react-router-dom'
 
-function Customizer() {
+function Customizer({prompt, setPrompt}) {
 
   return (
     <>
       <NavBar></NavBar>
       <h3>My Silly Superhero Tier List of:</h3>
-      <h2 id='tier-list-prompt'>Which superheroes are the most overrated?</h2> {/* Need to pass prompt prop here */}
+      <h2 id='tier-list-prompt'>{prompt}</h2> {/* Need to pass prompt prop here */}
 
       <ol>S Tier
         <li></li>
