@@ -1,13 +1,32 @@
+import NavBar from '../components/NavBar'
+import { Link } from 'react-router-dom'
+
 function Search() {
+
+  // need a function that grabs superhero names from the api and generates <li>'s, a button, and text field for each line
+
+  // need a function for + button that adds the li to 1 of 7 arrays (one array for S, A, B, C, D, E, and F)
+
+  // need a function that takes the 7 arrays and returns 7 ols containing <li>superhero name</li> according to the arrays
+
   return (
     <>
-      <Nav></Nav>
-      <h2>Welcome!</h2>
-      <p>Welcome to MSSTL, where you can make super silly tier lists with your favorite superheroes!</p><br></br>
-      <p>Make a tier list of:</p>
-      <h2 id='tier-list-prompt'>Which superheroes are the most overrated?</h2>
-      <button onClick={handleClick}>Reroll</button>
-      <button>Make my Tier List!</button>
+      <NavBar></NavBar>
+      <h3>My Silly Superhero Tier List of:</h3>
+      <h2 id='tier-list-prompt'>Which superheroes are the most overrated?</h2> {/* Need to pass prompt prop here */}
+
+      <form class="search-form">
+        <input type="text" placeholder="Search" name="search" />
+        <button type="submit">Search</button>
+      </form>
+
+      <ul>
+          <li>Superman</li><button>+</button><input type="select" placeholder="S, A, B, C, D, E, or F"></input> {/* These li's will be populated from the GET request */} {/* The + button adds the li to 1 of 7 ols in customizer */}
+      </ul>
+
+      <Link to="/customizer">
+      <button>Generate my Tier List!</button>
+      </Link>
     </>
   )
 }
