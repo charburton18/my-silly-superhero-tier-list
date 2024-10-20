@@ -1,16 +1,15 @@
-import React, { useRef } from 'react'
+import React, { useState } from 'react'
 import NavBar from '../components/NavBar'
 import { Link } from 'react-router-dom'
 
 const API_BASE_URL = 'https://gateway.marvel.com'
-const HASHED_KEY = '5f1000ff09e4a0bf0d35cf9022d43a02&hash=9d874b1bba792cfc4bf3b5ca2bbd4a23'
 
-function Search({ prompt, setPrompt }) {
+function Search({ prompt, setPrompt, searchQuery, setSearchQuery }) {
 
   // this function GETs superhero names from the API, by sending inputRef as the value of nameStartsWith
-  const getAllCharacters = async () => {
+  const getAllCharacters = async (searchQuery) => {
     try {
-      const response = await fetch(`${API_BASE_URL}/v1/public/characters?nameStartsWith=S&ts=1&apikey=${HASHED_KEY}`);
+      const response = await fetch(`${API_BASE_URL}/v1/public/characters?nameStartsWith=${searchQuery}&ts=1&apikey=${process.env.PUBLIC_API_KEY}&hash=${process.env.HASHED_KEY}`);
       const result = await response.json();
       const characterList = result;
       console.log(characterList);
@@ -21,14 +20,18 @@ function Search({ prompt, setPrompt }) {
     }
   };
 
-  //this function sets the current value of the search bar to a variable called inputRef
-  const inputRef = useRef();
+  //this function sets the current value of the search bar to a variable called ____
+  const handleInputChange = (event) => {
+    event.preventDefault();
+    setSearchQuery(event.target.value);
+  }
+  console.log(`this is the value of searchQuery: ` + searchQuery);
 
   const handleSubmit = (event) => {
-    console.log('This was submitted: ' + inputRef.current.value);
     event.preventDefault();
-    getAllCharacters();
-
+    console.log('This was submitted: ' + searchQuery);
+    getAllCharacters(searchQuery);
+    
     // this function generates <li>'s, a button, and text field for each character from the GET request
 
   };
@@ -46,7 +49,7 @@ function Search({ prompt, setPrompt }) {
       <h2 id='tier-list-prompt'>{prompt}</h2> {/* Need to pass prompt prop here */}
 
       <form onSubmit={handleSubmit} className="search-form">
-        <input type="text" ref={inputRef} placeholder="Search" name="search" />
+        <input id='search-field' type="text" onChange={handleInputChange} placeholder="Search" name="search" />
         <button type="submit">Search</button>
       </form>
 
