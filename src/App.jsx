@@ -8,12 +8,13 @@ function App() {
 
   const [prompt, setPrompt] = useState("Which superheroes are the most overrated?");
   const [searchQuery, setSearchQuery] = useState('');
+  const [characterList, setCharacterList] = useState([]);
 
   return (
     <>
       <Routes>
         <Route path='/' element={<Home prompt={prompt} setPrompt={setPrompt} />} />
-        <Route path='/search' element={<Search prompt={prompt} setPrompt={setPrompt} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />} />
+        <Route path='/search' element={<Search prompt={prompt} setPrompt={setPrompt} searchQuery={searchQuery} setSearchQuery={setSearchQuery} characterList={characterList} setCharacterList={setCharacterList}/>} />
         <Route path='/customizer' element={<Customizer prompt={prompt} setPrompt={setPrompt} />} />
       </Routes>
     </>
