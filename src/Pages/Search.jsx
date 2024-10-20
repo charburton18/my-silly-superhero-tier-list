@@ -35,6 +35,8 @@ function Search({ prompt, setPrompt }) {
 
   // need a function for + button that adds the li to 1 of 7 arrays (one array for S, A, B, C, D, E, and F)
 
+  // need a function for - button that deletes the correct superhero
+
   // need a function that takes the 7 arrays and returns 7 ols containing <li>superhero name</li> according to the arrays
 
   return (
@@ -49,7 +51,7 @@ function Search({ prompt, setPrompt }) {
       </form>
 
       <ul>
-        <li>Superman</li><button>+</button><input type="select" placeholder="S, A, B, C, D, E, or F"></input> {/* These li's will be populated from the GET request */} {/* The + button adds the li to 1 of 7 ols in customizer */}
+        <li>Superman</li><button>+</button><button>-</button><input type="select" placeholder="S, A, B, C, D, E, or F"></input> {/* These li's will be populated from the GET request */} {/* The + button adds the li to 1 of 7 ols in customizer */}
       </ul>
 
       <Link to="/customizer">
