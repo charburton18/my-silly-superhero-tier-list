@@ -4,36 +4,34 @@ import { Link } from 'react-router-dom'
 
 const API_BASE_URL = 'https://gateway.marvel.com'
 
-function Search({ prompt, setPrompt, searchQuery, setSearchQuery }) {
+function Search({ prompt, setPrompt, searchQuery, setSearchQuery, characterList, setCharacterList }) {
 
-  // this function GETs superhero names from the API, by sending inputRef as the value of nameStartsWith
+  // this function GETs superhero names from the API, by sending searchQuery as the value of nameStartsWith
   const getAllCharacters = async (searchQuery) => {
     try {
       const response = await fetch(`${API_BASE_URL}/v1/public/characters?nameStartsWith=${searchQuery}&ts=1&apikey=${process.env.PUBLIC_API_KEY}&hash=${process.env.HASHED_KEY}`);
       const result = await response.json();
-      const characterList = result;
-      console.log(characterList);
-      // setCharacterArr(characterList);
+      const characterArr = result.data.results;
+      console.log(characterArr);
+      setCharacterList(characterArr);
     }
     catch (error) {
       console.log('error', error);
     }
   };
 
-  //this function sets the current value of the search bar to a variable called ____
+  //this function sets the current value of the search bar to a state variable called searchQuery
   const handleInputChange = (event) => {
     event.preventDefault();
     setSearchQuery(event.target.value);
   }
+  
   console.log(`this is the value of searchQuery: ` + searchQuery);
 
+  //this function submits searchQuery to the API
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('This was submitted: ' + searchQuery);
     getAllCharacters(searchQuery);
-    
-    // this function generates <li>'s, a button, and text field for each character from the GET request
-
   };
 
   // need a function for + button that adds the li to 1 of 7 arrays (one array for S, A, B, C, D, E, and F)
@@ -46,16 +44,30 @@ function Search({ prompt, setPrompt, searchQuery, setSearchQuery }) {
     <>
       <NavBar></NavBar>
       <h3>My Silly Superhero Tier List of:</h3>
-      <h2 id='tier-list-prompt'>{prompt}</h2> {/* Need to pass prompt prop here */}
+      <h2 id='tier-list-prompt'>{prompt}</h2>
 
       <form onSubmit={handleSubmit} className="search-form">
         <input id='search-field' type="text" onChange={handleInputChange} placeholder="Search" name="search" />
         <button type="submit">Search</button>
       </form>
 
-      <ul>
-        <li>Superman</li><button>+</button><button>-</button><input type="select" placeholder="S, A, B, C, D, E, or F"></input> {/* These li's will be populated from the GET request */} {/* The + button adds the li to 1 of 7 ols in customizer */}
-      </ul>
+      <div>
+        {
+          // maps through the API array (characterList) and generates an image, li, + button, - button, and text field for each character & renders it on the page
+          characterList.map((currentCharacter) => {
+            return (
+              <div>
+                <img src={currentCharacter.thumbnail.path + `.` + currentCharacter.thumbnail.extension}></img>
+                <p>{currentCharacter.name}</p>
+                <p>{currentCharacter.description}</p>
+                <button>+</button>
+                <button>-</button>
+                <input type="select" placeholder="S, A, B, C, D, E, or F"></input>
+              </div>
+            )
+          })
+        }
+      </div>
 
       <Link to="/customizer">
         <button>Generate my Tier List!</button>
