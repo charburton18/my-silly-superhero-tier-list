@@ -1,7 +1,7 @@
 import NavBar from '../components/NavBar'
 import { Link } from 'react-router-dom'
 
-function Customizer({prompt, setPrompt}) {
+function Customizer({ prompt, setPrompt }) {
 
   return (
     <>
@@ -32,7 +32,7 @@ function Customizer({prompt, setPrompt}) {
       </ol>
 
       <Link to="/search">
-      <button>Edit my List</button>
+        <button>Edit my List</button>
       </Link>
     </>
   )

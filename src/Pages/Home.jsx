@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
-import { useState } from "react"
 
-function Home({prompt, setPrompt}) {
+function Home({ prompt, setPrompt }) {
 
   // this function replaces the tier list prompt from an array of prompts
   const handleClick = () => {

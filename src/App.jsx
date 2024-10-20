@@ -11,9 +11,9 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home prompt={prompt} setPrompt={setPrompt}/>} />
-        <Route path='/search' element={<Search prompt={prompt} setPrompt={setPrompt}/>} />
-        <Route path='/customizer' element={<Customizer prompt={prompt} setPrompt={setPrompt}/>} />
+        <Route path='/' element={<Home prompt={prompt} setPrompt={setPrompt} />} />
+        <Route path='/search' element={<Search prompt={prompt} setPrompt={setPrompt} />} />
+        <Route path='/customizer' element={<Customizer prompt={prompt} setPrompt={setPrompt} />} />
       </Routes>
     </>
   )
