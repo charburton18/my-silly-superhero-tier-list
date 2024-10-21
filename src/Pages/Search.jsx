@@ -33,11 +33,6 @@ function Search({ prompt, setPrompt, searchQuery, setSearchQuery, searchResults,
   };
 
   // need a function for + button that adds the li to 1 of 7 arrays (one array for S, A, B, C, D, E, and F)
-  // const addCharacterToMyTierList = (currentCharacter) => {
-  //   setMyTierList(currentCharacter);
-  //   console.log(myTierList);
-  //   // delete character from myList
-  // };
 
   // need a function for - button that deletes the correct superhero
   // const deleteCharacterFromMyTierList = (event, currentCharacter) => {
@@ -71,23 +66,8 @@ function Search({ prompt, setPrompt, searchQuery, setSearchQuery, searchResults,
                     <div id="search-inner-top-div">
                       <h2>{currentCharacter.name}</h2>
 
-                      <input id="S" type="radio" name="tiers" value="S"></input>
-                      <label htmlFor="S">S</label>
-                      <input id="A" type="radio" name="tiers" value="A"></input>
-                      <label htmlFor="A">A</label>
-                      <input id="B" type="radio" name="tiers" value="B"></input>
-                      <label htmlFor="B">B</label>
-                      <input id="C" type="radio" name="tiers" value="C"></input>
-                      <label htmlFor="C">C</label>
-                      <input id="D" type="radio" name="tiers" value="D"></input>
-                      <label htmlFor="D">D</label>
-                      <input id="E" type="radio" name="tiers" value="E"></input>
-                      <label htmlFor="E">E</label>
-                      <input id="F" type="radio" name="tiers" value="F"></input>
-                      <label htmlFor="F">F</label>
-
-                      <button id="plus-button" onClick={() => setMyTierList({...myTierList, S: [...myTierList.S, currentCharacter]})}>+</button>
-                      <button id="minus-button" onClick={() => setMyTierList(myTierList.S.filter((tierListChar) => tierListChar !== currentCharacter))}>-</button>
+                      <button id="plus-button" onClick={() => setMyTierList([...myTierList, currentCharacter])}>+</button>
+                      <button id="minus-button" onClick={() => setMyTierList(myTierList.filter((tierListChar) => tierListChar !== currentCharacter))}>-</button>
 
                     </div>
 
