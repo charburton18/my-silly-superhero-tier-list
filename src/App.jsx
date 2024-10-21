@@ -10,7 +10,8 @@ function App() {
   const [prompt, setPrompt] = useState("Which superheroes are the most overrated?");
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-  const [myTierList, setMyTierList] = useState([]);
+  const [myTierList, setMyTierList] = useState({S: [], A: [], B: [], C: [], D: [], E: [], F: []});
+  // const [searchQuery, setSearchQuery] = useState('');
 
   return (
     <>
