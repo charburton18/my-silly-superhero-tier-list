@@ -21,16 +21,17 @@ function Home({ prompt, setPrompt }) {
 
   return (
     <>
-      {console.log(prompt)}
-      <h1>My Silly Superhero Tier List</h1>
-      <h2>Welcome!</h2>
-      <p>Welcome to MSSTL, where you can make super silly tier lists with your favorite superheroes!</p><br></br>
-      <p>Make a tier list of:</p>
-      <h2 id='tier-list-prompt'>Which superheroes are the most overrated?</h2>
-      <button onClick={handleClick}>Reroll</button>
-      <Link to={`/search`}>
-        <button>Make my Tier List!</button>
-      </Link>
+      <div id="home-outer-div">
+        <h1>My Silly Superhero Tier List</h1>
+        <h2>Welcome!</h2>
+        <p>Welcome to MSSTL, where you can make super silly tier lists with your favorite superheroes!</p><br></br>
+        <p>Make a tier list of:</p>
+        <h2 id='tier-list-prompt'>Which superheroes are the most overrated?</h2>
+        <button className="bn632-hover bn18" onClick={handleClick}>Reroll</button>
+        <Link to={`/search`}>
+          <button className="bn632-hover bn18">Make my Tier List!</button>
+        </Link>
+      </div>
     </>
   )
 }

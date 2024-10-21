@@ -48,38 +48,40 @@ function Search({ prompt, setPrompt, searchQuery, setSearchQuery, searchResults,
 
   return (
     <>
-      <NavBar></NavBar>
-      <h3>My Silly Superhero Tier List of:</h3>
-      <h2 id='tier-list-prompt'>{prompt}</h2>
+      <div id="search-outer-div">
+        <NavBar></NavBar>
+        <h3>My Silly Superhero Tier List of:</h3>
+        <h2 id='tier-list-prompt'>{prompt}</h2>
 
-      <form onSubmit={handleSubmit} className="search-form">
-        <input id='search-field' type="text" onChange={handleInputChange} placeholder="Search" name="search" />
-        <button type="submit">Search</button>
-      </form>
+        <form onSubmit={handleSubmit} className="search-form">
+          <input id='search-field' type="text" onChange={handleInputChange} placeholder="Search" name="search" />
+          <button className="bn632-hover bn18" type="submit">Search</button>
+        </form>
 
-      <div>
-        {
-          // maps through the API array (characterList) and generates an image, li, + button, - button, and text field for each character & renders it on the page
-          searchResults.map((currentCharacter) => {
-            return (
-              <div>
-                <img id="superhero-img" src={currentCharacter.thumbnail.path + `.` + currentCharacter.thumbnail.extension}></img>
-                <p>{currentCharacter.name}</p>
-                <p>{currentCharacter.description}</p>
-                <button onClick={() => setMyTierList(currentCharacter)}>+</button>
-                <button>-</button>
-                <input type="select" placeholder="S, A, B, C, D, E, or F"></input>
-              </div>
-            )
-          })
-        }
+        <div>
+          {
+            // maps through the API array (characterList) and generates an image, li, + button, - button, and text field for each character & renders it on the page
+            searchResults.map((currentCharacter) => {
+              return (
+                <div id="search-inner-div">
+                  <img id="superhero-img" src={currentCharacter.thumbnail.path + `.` + currentCharacter.thumbnail.extension}></img>
+                  <h2>{currentCharacter.name}</h2>
+                  <p id="superhero-description">{currentCharacter.description}</p>
+                  <button id="plus-button" onClick={() => setMyTierList(currentCharacter)}>+</button>
+                  <button id="minus-button">-</button>
+                  <input type="select" placeholder="S, A, B, C, D, E, or F"></input>
+                </div>
+              )
+            })
+          }
+        </div>
+
+        {console.log(myTierList)}
+
+        <Link to="/customizer">
+          <button className="bn632-hover bn18">Generate my Tier List!</button>
+        </Link>
       </div>
-
-      {console.log(myTierList)}
-
-      <Link to="/customizer">
-        <button>Generate my Tier List!</button>
-      </Link>
     </>
   )
 }

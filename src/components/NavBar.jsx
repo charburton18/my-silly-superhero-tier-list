@@ -4,8 +4,8 @@ function NavBar() {
 
   return (
     <>
-      <nav>
-        <h1>MSSTL</h1>
+      <nav id="nav-bar-outer-div">
+        <h1 id="MSSTL-h1">MSSTL</h1>
         <Link to='/'>
           <button>Restart</button>
         </Link>
