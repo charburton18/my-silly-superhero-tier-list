@@ -64,12 +64,37 @@ function Search({ prompt, setPrompt, searchQuery, setSearchQuery, searchResults,
             searchResults.map((currentCharacter) => {
               return (
                 <div id="search-inner-div">
-                  <img id="superhero-img" src={currentCharacter.thumbnail.path + `.` + currentCharacter.thumbnail.extension}></img>
-                  <h2>{currentCharacter.name}</h2>
-                  <p id="superhero-description">{currentCharacter.description}</p>
-                  <button id="plus-button" onClick={() => setMyTierList(currentCharacter)}>+</button>
-                  <button id="minus-button">-</button>
-                  <input type="select" placeholder="S, A, B, C, D, E, or F"></input>
+                  <div id="search-inner-left-div">
+                    <img id="superhero-img" src={currentCharacter.thumbnail.path + `.` + currentCharacter.thumbnail.extension}></img>
+                  </div>
+                  <div id="search-inner-right-div">
+                    <div id="search-inner-top-div">
+                      <h2>{currentCharacter.name}</h2>
+
+                      <input id="S" type="radio" name="tiers" value="S"></input>
+                      <label htmlFor="S">S</label>
+                      <input id="A" type="radio" name="tiers" value="A"></input>
+                      <label htmlFor="A">A</label>
+                      <input id="B" type="radio" name="tiers" value="B"></input>
+                      <label htmlFor="B">B</label>
+                      <input id="C" type="radio" name="tiers" value="C"></input>
+                      <label htmlFor="C">C</label>
+                      <input id="D" type="radio" name="tiers" value="D"></input>
+                      <label htmlFor="D">D</label>
+                      <input id="E" type="radio" name="tiers" value="E"></input>
+                      <label htmlFor="E">E</label>
+                      <input id="F" type="radio" name="tiers" value="F"></input>
+                      <label htmlFor="F">F</label>
+
+                      <button id="plus-button" onClick={() => setMyTierList({...myTierList, S: [...myTierList.S, currentCharacter]})}>+</button>
+                      <button id="minus-button" onClick={() => setMyTierList(myTierList.S.filter((tierListChar) => tierListChar !== currentCharacter))}>-</button>
+
+                    </div>
+
+                    <div id="search-inner-bottom-div">
+                      <p id="superhero-description">{currentCharacter.description}</p>
+                    </div>
+                  </div>
                 </div>
               )
             })
