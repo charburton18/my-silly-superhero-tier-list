@@ -1,3 +1,4 @@
+import './app.css'
 import Home from './Pages/Home'
 import Search from './Pages/Search'
 import Customizer from './Pages/Customizer'

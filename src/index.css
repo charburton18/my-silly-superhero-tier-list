@@ -1,0 +1,116 @@
+html {
+  background: linear-gradient(rgb(237, 161, 193) 0%, rgb(250, 178, 172) 25.5%, rgb(190, 228, 210) 62.3%, rgb(215, 248, 247) 93.8%)
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Nav.jsx */
+#nav-bar-outer-div {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding-right: 20%;
+  padding-left: 20%;
+}
+
+#MSSTL-h1 {
+  margin: 0;
+}
+
+/* Home.jsx */
+#home-outer-div {
+  display: flex, table-column;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Search.jsx */
+
+#search-outer-div {
+  display: flex, table-column;
+  text-align: center;
+  justify-content: center;
+}
+
+#search-field {
+  height: 45px;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+#search-inner-div {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 20px;
+  padding-right: 20%;
+  padding-left: 20%;
+}
+
+
+#superhero-img {
+  object-fit: cover;
+  width: 230px;
+  height: 230px;
+}
+
+#plus-button {
+  background-color: #C1E2D0;
+  height: 60px;
+  width: 60px;
+}
+
+#minus-button {
+  background-color: #ce6d94;
+  height: 60px;
+  width: 60px;
+}
+
+#superhero-description {
+
+}
+
+/* buttons */ 
+.bn632-hover {
+  width: 160px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.bn632-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.bn632-hover:focus {
+  outline: none;
+}
+
+.bn632-hover.bn18 {
+  background-image: linear-gradient(
+    to right,
+    #25aae1,
+    #40e495,
+    #30dd8a,
+    #2bb673
+  );
+  box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
