@@ -63,7 +63,7 @@ function Search({ prompt, setPrompt, searchQuery, setSearchQuery, searchResults,
           searchResults.map((currentCharacter) => {
             return (
               <div>
-                <img src={currentCharacter.thumbnail.path + `.` + currentCharacter.thumbnail.extension}></img>
+                <img id="superhero-img" src={currentCharacter.thumbnail.path + `.` + currentCharacter.thumbnail.extension}></img>
                 <p>{currentCharacter.name}</p>
                 <p>{currentCharacter.description}</p>
                 <button onClick={() => setMyTierList(currentCharacter)}>+</button>
