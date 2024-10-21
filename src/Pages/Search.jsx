@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const API_BASE_URL = 'https://gateway.marvel.com'
 
-function Search({ prompt, setPrompt, searchQuery, setSearchQuery, characterList, setCharacterList }) {
+function Search({ prompt, setPrompt, searchQuery, setSearchQuery, searchResults, setSearchResults, myTierList, setMyTierList }) {
 
   // this function GETs superhero names from the API, by sending searchQuery as the value of nameStartsWith
   const getAllCharacters = async (searchQuery) => {
@@ -13,7 +13,7 @@ function Search({ prompt, setPrompt, searchQuery, setSearchQuery, characterList,
       const result = await response.json();
       const characterArr = result.data.results;
       console.log(characterArr);
-      setCharacterList(characterArr);
+      setSearchResults(characterArr);
     }
     catch (error) {
       console.log('error', error);
@@ -25,8 +25,6 @@ function Search({ prompt, setPrompt, searchQuery, setSearchQuery, characterList,
     event.preventDefault();
     setSearchQuery(event.target.value);
   }
-  
-  console.log(`this is the value of searchQuery: ` + searchQuery);
 
   //this function submits searchQuery to the API
   const handleSubmit = (event) => {
@@ -35,8 +33,16 @@ function Search({ prompt, setPrompt, searchQuery, setSearchQuery, characterList,
   };
 
   // need a function for + button that adds the li to 1 of 7 arrays (one array for S, A, B, C, D, E, and F)
+  // const addCharacterToMyTierList = (currentCharacter) => {
+  //   setMyTierList(currentCharacter);
+  //   console.log(myTierList);
+  //   // delete character from myList
+  // };
 
   // need a function for - button that deletes the correct superhero
+  // const deleteCharacterFromMyTierList = (event, currentCharacter) => {
+    // delete character from myList
+  // };
 
   // need a function that takes the 7 arrays and returns 7 ols containing <li>superhero name</li> according to the arrays
 
@@ -54,13 +60,13 @@ function Search({ prompt, setPrompt, searchQuery, setSearchQuery, characterList,
       <div>
         {
           // maps through the API array (characterList) and generates an image, li, + button, - button, and text field for each character & renders it on the page
-          characterList.map((currentCharacter) => {
+          searchResults.map((currentCharacter) => {
             return (
               <div>
                 <img src={currentCharacter.thumbnail.path + `.` + currentCharacter.thumbnail.extension}></img>
                 <p>{currentCharacter.name}</p>
                 <p>{currentCharacter.description}</p>
-                <button>+</button>
+                <button onClick={() => setMyTierList(currentCharacter)}>+</button>
                 <button>-</button>
                 <input type="select" placeholder="S, A, B, C, D, E, or F"></input>
               </div>
@@ -68,6 +74,8 @@ function Search({ prompt, setPrompt, searchQuery, setSearchQuery, characterList,
           })
         }
       </div>
+
+      {console.log(myTierList)}
 
       <Link to="/customizer">
         <button>Generate my Tier List!</button>
