@@ -43,7 +43,7 @@ function Search({ prompt, setPrompt, searchQuery, setSearchQuery, searchResults,
 
   return (
     <>
-      <div id="search-outer-div">
+      <div className="page-outer-div">
         <NavBar></NavBar>
         <h3>My Silly Superhero Tier List of:</h3>
         <h2 id='tier-list-prompt'>{prompt}</h2>
@@ -69,8 +69,8 @@ function Search({ prompt, setPrompt, searchQuery, setSearchQuery, searchResults,
                   <div id="search-inner-right-div">
                     <div id="search-inner-top-div">
                       <h2>{currentCharacter.name}</h2>
-                      <button id="plus-button" onClick={() => setMyTierList([...myTierList, currentCharacter])}>+</button>
-                      <button id="minus-button" onClick={() => setMyTierList(myTierList.filter((tierListChar) => tierListChar !== currentCharacter))}>-</button>
+                      <button id="minus-button" className="bn633-hover bn18" onClick={() => setMyTierList(myTierList.filter((tierListChar) => tierListChar !== currentCharacter))}>-</button>
+                      <button id="plus-button" className="bn632-hover bn18" onClick={() => setMyTierList([...myTierList, currentCharacter])}>+</button>
                     </div>
                     <div id="search-inner-bottom-div">
                       <p id="superhero-description">{currentCharacter.description}</p>

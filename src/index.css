@@ -4,6 +4,9 @@ html {
 
 body {
   min-height: 100vh;
+  font-family: "Livvic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* Nav.jsx */
@@ -15,11 +18,7 @@ body {
   padding-left: 20%;
 }
 
-#MSSTL-h1 {
-  margin: 0;
-}
-
-/* Home.jsx & Customizer.jsx*/
+/* Home.jsx & Customizer.jsx & Search.jsx */
 .page-outer-div {
   display: flex, table-column;
   text-align: center;
@@ -51,6 +50,8 @@ body {
 #search-inner-right-div {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 912.2px;
 }
 
 #search-inner-top-div {
@@ -72,13 +73,13 @@ body {
 }
 
 #plus-button {
-  background-color: #C1E2D0;
-  margin-left: 5px;
+  width: 56px;
+  font-size: 25px;
 }
 
 #minus-button {
-  background-color: #ce6d94;
-  margin-left: 5px;
+  width: 56px;
+  font-size: 30px;
 }
 
 /* Customizer.jsx */
@@ -89,10 +90,16 @@ body {
   text-align: left;
 }
 
+.listed-character {
+  font-size: 36px;
+}
+
 /* buttons */ 
 /* green/blue buttons */ 
 .bn632-hover {
   width: 160px;
+  font-family: "Livvic", sans-serif;
+  font-style: normal;
   font-size: 16px;
   font-weight: 600;
   color: #fff;
@@ -135,6 +142,8 @@ body {
 /* pink/purple buttons */ 
 .bn633-hover {
   width: 160px;
+  font-family: "Livvic", sans-serif;
+  font-style: normal;
   font-size: 16px;
   font-weight: 600;
   color: #fff;
@@ -172,4 +181,23 @@ body {
     #b62b98
   );
   box-shadow: 0 4px 15px 0 rgba(255, 255, 255, 0.75);
+}
+
+/* fonts */
+.livvic-regular {
+  font-family: "Livvic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.livvic-thin {
+  font-family: "Livvic", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.architects-daughter-regular {
+  font-family: "Architects Daughter", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
