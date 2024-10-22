@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-function Home({ setPrompt }) {
+function Home({ prompt, setPrompt }) {
 
   // this function randomly replaces the tier list prompt "Which superheroes are the most overrated" from an array of prompts
   const handleClick = () => {
@@ -13,10 +13,8 @@ function Home({ setPrompt }) {
     const prompt6 = 'Which superheroes would be best in a fight against Magneto?'
     // define an array containing every prompt
     const promptArr = [prompt1, prompt2, prompt3, prompt4, prompt5, prompt6]
-    // define the h2 element we need to access
-    const currentPrompt = document.getElementById('tier-list-prompt')
-    // replace the inner text of the h2 'tier-list-prompt' with a random prompt from the prompt array. Set the the resulting prompt as the state variable.
-    setPrompt(currentPrompt.innerText = promptArr[Math.floor(Math.random() * promptArr.length)])
+    // Set a random prompt as the state variable.
+    setPrompt(promptArr[Math.floor(Math.random() * promptArr.length)]);
   }
 
   return (
@@ -26,7 +24,7 @@ function Home({ setPrompt }) {
         <h2>Welcome!</h2>
         <p>Welcome to MSSTL, where you can make super silly tier lists with your favorite superheroes!</p><br></br>
         <p>Make a tier list of:</p>
-        <h2 id='tier-list-prompt'>Which superheroes are the most overrated?</h2>
+        <h2 id='tier-list-prompt'>{prompt}</h2>
         <button className="bn633-hover bn18" onClick={handleClick}>Reroll</button>
         <Link to={`/search`}>
           <button className="bn632-hover bn18">Make my Tier List!</button>

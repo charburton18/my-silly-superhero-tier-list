@@ -11,7 +11,6 @@ function Search({ prompt, searchQuery, setSearchQuery, searchResults, setSearchR
       const response = await fetch(`${API_BASE_URL}/v1/public/characters?nameStartsWith=${searchQuery}&ts=1&apikey=${process.env.PUBLIC_API_KEY}&hash=${process.env.HASHED_KEY}`);
       const result = await response.json();
       const characterArr = result.data.results;
-      console.log(characterArr);
       setSearchResults(characterArr);
     }
     catch (error) {
@@ -33,8 +32,8 @@ function Search({ prompt, searchQuery, setSearchQuery, searchResults, setSearchR
 
   return (
     <>
+      <NavBar></NavBar>
       <div className="page-outer-div">
-        <NavBar></NavBar>
         <h3>My Silly Superhero Tier List of:</h3>
         <h2 id='tier-list-prompt'>{prompt}</h2>
 
@@ -73,7 +72,6 @@ function Search({ prompt, searchQuery, setSearchQuery, searchResults, setSearchR
             })
           }
         </div>
-        {console.log(myTierList)}
       </div>
     </>
   )
