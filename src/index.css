@@ -26,12 +26,6 @@ body {
 }
 
 /* Search.jsx */
-#search-outer-div {
-  display: flex, table-column;
-  text-align: center;
-  justify-content: center;
-}
-
 #search-field {
   height: 45px;
   font-size: 30px;
@@ -39,14 +33,14 @@ body {
   margin-bottom: 5px;
 }
 
-#search-inner-div {
+.search-inner-div {
   display: flex;
   justify-content: row;
   padding-right: 20%;
   padding-left: 20%;
 }
 
-#search-inner-right-div {
+.search-inner-right-div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,7 +59,7 @@ body {
   padding-right: 20px;
 }
 
-#superhero-img {
+.superhero-img {
   object-fit: cover;
   width: 230px;
   height: 230px;

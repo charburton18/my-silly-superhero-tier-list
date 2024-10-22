@@ -51,20 +51,20 @@ function Search({ prompt, searchQuery, setSearchQuery, searchResults, setSearchR
             // maps through the searchResults from the API and generates a name, image, + button, - button, several divs, and a description for each character & renders it on the page
             searchResults.map((currentCharacter) => {
               return (
-                <div id="search-inner-div">
-                  <div id="search-inner-left-div">
-                    <img id="superhero-img" src={currentCharacter.thumbnail.path + `.` + currentCharacter.thumbnail.extension}></img>
+                <div className="search-inner-div">
+                  <div className="search-inner-left-div">
+                    <img className="superhero-img" src={currentCharacter.thumbnail.path + `.` + currentCharacter.thumbnail.extension}></img>
                   </div>
-                  <div id="search-inner-right-div">
-                    <div id="search-inner-top-div">
+                  <div className="search-inner-right-div">
+                    <div className="search-inner-top-div">
                       <h2>{currentCharacter.name}</h2>
                       {/* This minus-button filters through the state variable, myTierList and sets the state variable to a new mytierList which excludes the current character. */}
                       <button id="minus-button" className="bn633-hover bn18" onClick={() => setMyTierList(myTierList.filter((tierListChar) => tierListChar !== currentCharacter))}>-</button>
                       {/* This plus-button spreads the existing myTierList into an array, then appends the currentCharacter to the array, and sets this array as the new state variable myTierList.  */}
                       <button id="plus-button" className="bn632-hover bn18" onClick={() => setMyTierList([...myTierList, currentCharacter])}>+</button>
                     </div>
-                    <div id="search-inner-bottom-div">
-                      <p id="superhero-description">{currentCharacter.description}</p>
+                    <div className="search-inner-bottom-div">
+                      <p className="superhero-description">{currentCharacter.description}</p>
                     </div>
                   </div>
                 </div>
