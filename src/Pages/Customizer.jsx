@@ -25,9 +25,13 @@ function Customizer({ prompt, setPrompt, myTierList, setMyTierList }) {
           </ol>
         </div>
 
+        <button className="bn633-hover bn18" onClick={() => setMyTierList([])}>Clear my List</button>
+
         <Link to="/search">
           <button className="bn632-hover bn18">Edit my List</button>
         </Link>
+
+
       </div>
     </>
   )
