@@ -19,15 +19,14 @@ body {
   margin: 0;
 }
 
-/* Home.jsx */
-#home-outer-div {
+/* Home.jsx & Customizer.jsx*/
+.page-outer-div {
   display: flex, table-column;
   text-align: center;
   justify-content: center;
 }
 
 /* Search.jsx */
-
 #search-outer-div {
   display: flex, table-column;
   text-align: center;
@@ -82,6 +81,13 @@ body {
   margin-left: 5px;
 }
 
+/* Customizer.jsx */
+
+#list-div {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
 
 /* buttons */ 
 /* green/blue buttons */ 

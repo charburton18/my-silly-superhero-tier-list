@@ -21,7 +21,7 @@ function Home({ prompt, setPrompt }) {
 
   return (
     <>
-      <div id="home-outer-div">
+      <div className="page-outer-div">
         <h1>My Silly Superhero Tier List</h1>
         <h2>Welcome!</h2>
         <p>Welcome to MSSTL, where you can make super silly tier lists with your favorite superheroes!</p><br></br>
