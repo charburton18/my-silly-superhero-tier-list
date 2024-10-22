@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
 import NavBar from '../components/NavBar'
 import { Link } from 'react-router-dom'
 
 const API_BASE_URL = 'https://gateway.marvel.com'
 
-function Search({ prompt, setPrompt, searchQuery, setSearchQuery, searchResults, setSearchResults, myTierList, setMyTierList }) {
+function Search({ prompt, searchQuery, setSearchQuery, searchResults, setSearchResults, myTierList, setMyTierList }) {
 
   // this function GETs superhero names from the API, by sending searchQuery as the value of nameStartsWith
   const getAllCharacters = async (searchQuery) => {
@@ -26,20 +25,11 @@ function Search({ prompt, setPrompt, searchQuery, setSearchQuery, searchResults,
     setSearchQuery(event.target.value);
   }
 
-  //this function submits searchQuery to the API
+  //this function submits the searchQuery to the API and calls getAllCharacters() which populates characters on the screen
   const handleSubmit = (event) => {
     event.preventDefault();
     getAllCharacters(searchQuery);
   };
-
-  // need a function for + button that adds the li to 1 of 7 arrays (one array for S, A, B, C, D, E, and F)
-
-  // need a function for - button that deletes the correct superhero
-  // const deleteCharacterFromMyTierList = (event, currentCharacter) => {
-  // delete character from myList
-  // };
-
-  // need a function that takes the 7 arrays and returns 7 ols containing <li>superhero name</li> according to the arrays
 
   return (
     <>
@@ -59,7 +49,7 @@ function Search({ prompt, setPrompt, searchQuery, setSearchQuery, searchResults,
 
         <div>
           {
-            // maps through the API array (characterList) and generates an image, li, + button, - button, and text field for each character & renders it on the page
+            // maps through the searchResults from the API and generates a name, image, + button, - button, several divs, and a description for each character & renders it on the page
             searchResults.map((currentCharacter) => {
               return (
                 <div id="search-inner-div">
@@ -69,7 +59,9 @@ function Search({ prompt, setPrompt, searchQuery, setSearchQuery, searchResults,
                   <div id="search-inner-right-div">
                     <div id="search-inner-top-div">
                       <h2>{currentCharacter.name}</h2>
+                      {/* This minus-button filters through the state variable, myTierList and sets the state variable to a new mytierList which excludes the current character. */}
                       <button id="minus-button" className="bn633-hover bn18" onClick={() => setMyTierList(myTierList.filter((tierListChar) => tierListChar !== currentCharacter))}>-</button>
+                      {/* This plus-button spreads the existing myTierList into an array, then appends the currentCharacter to the array, and sets this array as the new state variable myTierList.  */}
                       <button id="plus-button" className="bn632-hover bn18" onClick={() => setMyTierList([...myTierList, currentCharacter])}>+</button>
                     </div>
                     <div id="search-inner-bottom-div">

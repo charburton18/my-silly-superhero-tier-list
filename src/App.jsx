@@ -1,4 +1,3 @@
-import './app.css'
 import Home from './Pages/Home'
 import Search from './Pages/Search'
 import Customizer from './Pages/Customizer'
@@ -11,14 +10,13 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [myTierList, setMyTierList] = useState([]);
-  // const [searchQuery, setSearchQuery] = useState('');
 
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home prompt={prompt} setPrompt={setPrompt} />} />
-        <Route path='/search' element={<Search prompt={prompt} setPrompt={setPrompt} searchQuery={searchQuery} setSearchQuery={setSearchQuery} searchResults={searchResults} setSearchResults={setSearchResults} myTierList={myTierList} setMyTierList={setMyTierList}/>} />
-        <Route path='/customizer' element={<Customizer prompt={prompt} setPrompt={setPrompt} myTierList={myTierList} setMyTierList={setMyTierList}/>} />
+        <Route path='/' element={<Home setPrompt={setPrompt} />} />
+        <Route path='/search' element={<Search prompt={prompt} searchQuery={searchQuery} setSearchQuery={setSearchQuery} searchResults={searchResults} setSearchResults={setSearchResults} myTierList={myTierList} setMyTierList={setMyTierList} />} />
+        <Route path='/customizer' element={<Customizer prompt={prompt} myTierList={myTierList} setMyTierList={setMyTierList} />} />
       </Routes>
     </>
   )
