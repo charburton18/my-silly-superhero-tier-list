@@ -4,7 +4,7 @@ Welcome to My Silly Superhero Tier List (MSSTL)! [View our website]()
 
 ## Project Planning
 
-View how the project was planned through the [Google Planning Doc](https://docs.google.com/document/d/12If6srPsXWisIytbHHm1vEGf2Vxd5953LN6XYvCe9Ik/edit?usp=sharing).
+View how the project was planned through the [Google Planning Doc](https://docs.google.com/document/d/18H6DED6GsWCup6TBSrSjKcTDWTC2ACh8bFrMNT0UXfE/edit?usp=sharing).
 
 ## Project Requirements
 
