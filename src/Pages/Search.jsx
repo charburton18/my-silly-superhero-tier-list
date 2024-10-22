@@ -52,6 +52,10 @@ function Search({ prompt, setPrompt, searchQuery, setSearchQuery, searchResults,
           <input id='search-field' type="text" onChange={handleInputChange} placeholder="Search" name="search" />
           <button className="bn632-hover bn18" type="submit">Search</button>
         </form>
+        
+        <Link to="/customizer">
+          <button className="bn632-hover bn18">Generate my Tier List!</button>
+        </Link>
 
         <div>
           {
