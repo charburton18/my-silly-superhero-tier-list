@@ -7,7 +7,7 @@ function NavBar() {
       <nav id="nav-bar-outer-div">
         <h1 id="MSSTL-h1">MSSTL</h1>
         <Link to='/'>
-          <button>Restart</button>
+          <button className="bn633-hover bn18">Change Prompt</button>
         </Link>
       </nav>
     </>

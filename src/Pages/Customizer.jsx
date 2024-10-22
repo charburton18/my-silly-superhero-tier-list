@@ -6,25 +6,33 @@ function Customizer({ prompt, setPrompt, myTierList, setMyTierList }) {
   return (
     <>
       <NavBar></NavBar>
-      <h3>My Silly Superhero Tier List of:</h3>
-      <h2 id='tier-list-prompt'>{prompt}</h2> 
+      <div className="page-outer-div">
+        <h3>My Silly Superhero Tier List of:</h3>
+        <h2 id='tier-list-prompt'>{prompt}</h2> 
 
-      {console.log(myTierList)}
+        {console.log(myTierList)}
 
-      <ol>
-        {myTierList.map((currentChar) => {
-            return (
-              <>
-              <li>{currentChar.name}</li>
-              </>
-            )
-          })
-        }
-      </ol>
+        <div id="list-div">
+          <ol>
+            {myTierList.map((currentChar) => {
+                return (
+                  <>
+                  <li className='listed-character'>{currentChar.name}</li>
+                  </>
+                )
+              })
+            }
+          </ol>
+        </div>
 
-      <Link to="/search">
-        <button className="bn632-hover bn18">Edit my List</button>
-      </Link>
+        <button className="bn633-hover bn18" onClick={() => setMyTierList([])}>Clear my List</button>
+
+        <Link to="/search">
+          <button className="bn632-hover bn18">Edit my List</button>
+        </Link>
+
+
+      </div>
     </>
   )
 }
