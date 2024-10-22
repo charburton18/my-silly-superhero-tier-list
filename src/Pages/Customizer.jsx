@@ -16,7 +16,7 @@ function Customizer({ prompt, myTierList, setMyTierList }) {
             {myTierList.map((currentChar) => {
                 return (
                   <>
-                  <li className='listed-character'>{currentChar.name}</li>
+                    <li className='listed-character'>{currentChar.name}</li>
                   </>
                 )
               })

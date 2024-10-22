@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home setPrompt={setPrompt} />} />
+        <Route path='/' element={<Home prompt={prompt} setPrompt={setPrompt} />} />
         <Route path='/search' element={<Search prompt={prompt} searchQuery={searchQuery} setSearchQuery={setSearchQuery} searchResults={searchResults} setSearchResults={setSearchResults} myTierList={myTierList} setMyTierList={setMyTierList} />} />
         <Route path='/customizer' element={<Customizer prompt={prompt} myTierList={myTierList} setMyTierList={setMyTierList} />} />
       </Routes>
