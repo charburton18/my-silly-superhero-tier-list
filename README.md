@@ -1,6 +1,6 @@
 # Project Overview
 
-Welcome to My Silly Superhero Tier List (MSSTL)! [View our website]()
+Welcome to My Silly Superhero Tier List (MSSTL)! [View our website](https://mysillysuperherotierlist.netlify.app)
 
 ## Project Planning
 
