@@ -2,6 +2,8 @@
 
 Welcome to My Silly Superhero Tier List (MSSTL)! [View our website](https://mysillysuperherotierlist.netlify.app)
 
+![Screenshot 2025-04-14 at 11 07 05 AM](https://github.com/user-attachments/assets/1e882e2d-a433-4170-82e2-c82009683c57)
+
 ## Project Planning
 
 View how the project was planned through the [Google Planning Doc](https://docs.google.com/document/d/18H6DED6GsWCup6TBSrSjKcTDWTC2ACh8bFrMNT0UXfE/edit?usp=sharing).
